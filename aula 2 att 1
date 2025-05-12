@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    char nome[100];
+    int idade;
+    float altura;
+    char genero;
+
+    // Entrada de dados
+    printf("Qual é o seu nome? ");
+    fgets(nome, sizeof(nome), stdin);  // Usa fgets para permitir nomes com espaços
+
+    printf("Qual é sua idade? ");
+    scanf("%d", &idade);
+
+    printf("Qual a sua altura? ");
+    scanf("%f", &altura);
+
+    // Limpar o buffer antes de ler o caractere
+    while (getchar() != '\n'); // limpa o buffer
+
+    printf("Qual o seu gênero? ");
+    scanf("%c", &genero);
+
+    // Saída formatada
+    printf("\nBem-vindo(a), %s", nome);
+    printf("Seu Perfil\n");
+    printf("Nome: %s", nome);
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+    printf("Gênero: %c\n", genero);
+
+    return 0;
+}
